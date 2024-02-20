@@ -1,3 +1,5 @@
+//This, is the form how i employed the game "rock, paper, scissors" in code. But, after this commit*, I'll delete all code and i create new code followed the instructions of Odin Project.
+
 //Inputs disponibles:
 let options = ["rock", "paper", "scissors"]
 let selectionUser = prompt(`Your options are these ${options}`)
