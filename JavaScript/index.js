@@ -1,28 +1,47 @@
-//This, is the form how i employed the game "rock, paper, scissors" in code. But, after this commit*, I'll delete all code and i create new code followed the instructions of Odin Project.
-
-//Inputs disponibles:
+//Inputs:
 let options = ["rock", "paper", "scissors"]
-let selectionUser = prompt(`Your options are these ${options}`)
-let selectionRandomComputer = options[Math.floor(Math.random() * options.length)]
 
-//Show the election
-    //User
-alert(`You are selection ${selectionUser}`)
-    //Computer
-alert(`The computer selection ${selectionRandomComputer}`)
+//Function for the computer random selection
+function getComputerChoice() {
+    return options[Math.floor(Math.random() * options.length)]
+}
+    //Variable for the save the function
+    let computerSelection = getComputerChoice()
 
-// Battle
-function battleUserComputer() {
-    if (selectionUser === selectionRandomComputer) {
-        return alert("Tie .-.")
-    } else if (selectionUser === "rock" && selectionRandomComputer === "paper") {
-        return alert("You win!")
-    } else if (selectionUser === "paper" && selectionRandomComputer === "rock") {
-        return alert("You win!")
-    } else if (selectionUser === "scissors" && selectionRandomComputer === "scissors") {
-        return alert("You win!")
+//Battle
+function playRound(playerSelection, computerSelection) {
+    let playerSelectionLowerCase = playerSelection.toLowerCase()
+
+    if (playerSelectionLowerCase === computerSelection) {
+        console.log("tie .-.")
+    } else if (playerSelectionLowerCase === "rock" && computerSelection === "scissors") {
+        alert("You win! Rock beats Scissors")
+    } else if (playerSelectionLowerCase === "scissors" && computerSelection === "paper") {
+        alert("You win! Scissors beats Paper")
+    } else if (playerSelectionLowerCase === "paper" && computerSelection === "rock") {
+        alert("You win! Paper beats Rock")
     } else {
-        return alert("You lose...")
+        alert(`You lose... ${playerSelectionLowerCase} beats ${computerSelection}`)
     }
 }
-battleUserComputer()
+
+function playerSelection() {
+    let playerSelect = prompt(`These is your functions ${options}`)
+    return playerSelect
+}
+
+function playGame() {
+    let iteration = 0
+    while (iteration < 5) {
+        let userChoice = playerSelection()
+        let computerChoice = getComputerChoice()
+        playRound(userChoice, computerChoice)
+        iteration++
+    }
+}
+
+//Variable for the election user
+// let playerSelection = prompt(`These is your functions ${options}`)
+
+
+playGame()
