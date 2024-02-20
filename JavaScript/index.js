@@ -36,7 +36,11 @@ showChoiceComputer()
 
 // Battle
 function battleUserComputer() {
-    if (selectionUser === "rock" && randomNumberComputer === 2) {
+    if ((selectionUser === "rock" && randomNumberComputer === 0) ||
+        (selectionUser === "paper" && randomNumberComputer === 1) ||
+        (selectionUser === "scissors" && randomNumberComputer === 3)) {
+        return alert("Tie .-.")
+    } else if (selectionUser === "rock" && randomNumberComputer === 2) {
         return alert("You win!")
     } else if (selectionUser === "paper" && randomNumberComputer === 0) {
         return alert("You win!")
