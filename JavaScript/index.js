@@ -2,6 +2,7 @@
 let options = ["rock", "paper", "scissors"]
 let selectionUser = prompt(`Your options are these ${options}`)
 
+//Election for the User
 function choiceUser() {
     if (selectionUser == options[0]) {
         return alert(`You are selection ${options[0]}`)
@@ -15,11 +16,13 @@ function choiceUser() {
 }
 choiceUser()
 
-function choiceComputer() {
-    let randomNumberComputer = Math.floor(Math.random() * options.length)
+//Election for the Computer
+    //Variable for the random number
+let randomNumberComputer = Math.floor(Math.random() * options.length)
+function showChoiceComputer() {
     let selectionComputer
 
-    if (randomNumberComputer === 0 ) {
+    if (randomNumberComputer === 0) {
         selectionComputer = `The computer selection ${options[0]}`
     } else if (randomNumberComputer === 1) {
         selectionComputer = `The computer selection ${options[1]}`
@@ -27,7 +30,20 @@ function choiceComputer() {
         selectionComputer = `The computer selection ${options[2]}`
     }
 
-    return selectionComputer
+    return alert(selectionComputer)
 }
-alert(choiceComputer())
+showChoiceComputer()
+
 // Battle
+function battleUserComputer() {
+    if (selectionUser === "rock" && randomNumberComputer === 2) {
+        return alert("You win!")
+    } else if (selectionUser === "paper" && randomNumberComputer === 0) {
+        return alert("You win!")
+    } else if (selectionUser === "scissors" && randomNumberComputer === 1) {
+        return alert("You win!")
+    } else {
+        return alert("You lose...")
+    }
+}
+battleUserComputer()
