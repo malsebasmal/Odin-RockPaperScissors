@@ -24,12 +24,13 @@ function playRound(playerSelection, computerSelection) {
         alert(`You lose... ${playerSelectionLowerCase} beats ${computerSelection}`)
     }
 }
-
+//Function for the selections the user
 function playerSelection() {
     let playerSelect = prompt(`These is your functions ${options}`)
     return playerSelect
 }
 
+//Rounds
 function playGame() {
     let iteration = 0
     while (iteration < 5) {
@@ -39,9 +40,5 @@ function playGame() {
         iteration++
     }
 }
-
-//Variable for the election user
-// let playerSelection = prompt(`These is your functions ${options}`)
-
 
 playGame()
