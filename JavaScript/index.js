@@ -1,25 +1,22 @@
 //Inputs disponibles:
 let options = ["rock", "paper", "scissors"]
+let selectionUser = prompt(`Your options are these ${options}`)
 
-function choiceUser(inputUser) {
-    //variable where save the result
-    let selectionUser
-    
-    if (inputUser == options[0]) {
-        selectionUser = `You are selection ${options[0]}`
-    } else if (inputUser == options[1]) {
-        selectionUser = `You are selection ${options[1]}`
-    } else if (inputUser == options[2]) {
-        selectionUser = `You are selection ${options[2]}`
+function choiceUser() {
+    if (selectionUser == options[0]) {
+        return alert(`You are selection ${options[0]}`)
+    } else if (selectionUser == options[1]) {
+        return alert(`You are selection ${options[1]}`)
+    } else if (selectionUser == options[2]) {
+        return alert(`You are selection ${options[2]}`)
     } else {
-        return "Please, you are need selection one valides option"
+        return alert("Please, you are need selection one valides option")
     }
-    
-    return selectionUser
 }
+choiceUser()
 
 function choiceComputer() {
-    let randomNumberComputer = Math.floor(Math.random() * 4)
+    let randomNumberComputer = Math.floor(Math.random() * options.length)
     let selectionComputer
 
     if (randomNumberComputer === 0 ) {
@@ -32,3 +29,5 @@ function choiceComputer() {
 
     return selectionComputer
 }
+alert(choiceComputer())
+// Battle
